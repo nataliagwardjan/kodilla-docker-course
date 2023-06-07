@@ -1,2 +1,2 @@
-FROM alpine:3.17
+FROM alpine:latest
 CMD ["echo", "Hello World"]
