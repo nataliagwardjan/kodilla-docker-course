@@ -1,0 +1,82 @@
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker run -i --name tomcat-server --rm -p 8888:8080 -q tomcat:latest
+08-Jun-2023 18:44:47.648 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version name:   Apache Tomcat/10.1.9
+08-Jun-2023 18:44:47.653 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server built:          May 9 2023 14:30:05 UTC
+08-Jun-2023 18:44:47.654 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Server version number: 10.1.9.0
+08-Jun-2023 18:44:47.654 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Name:               Linux
+08-Jun-2023 18:44:47.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log OS Version:            5.15.49-linuxkit-pr
+08-Jun-2023 18:44:47.655 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Architecture:          amd64
+08-Jun-2023 18:44:47.656 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Java Home:             /opt/java/openjdk
+08-Jun-2023 18:44:47.657 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Version:           17.0.7+7
+08-Jun-2023 18:44:47.657 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log JVM Vendor:            Eclipse Adoptium
+08-Jun-2023 18:44:47.658 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_BASE:         /usr/local/tomcat
+08-Jun-2023 18:44:47.658 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log CATALINA_HOME:         /usr/local/tomcat
+08-Jun-2023 18:44:47.671 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.config.file=/usr/local/tomcat/conf/logging.properties
+08-Jun-2023 18:44:47.672 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+08-Jun-2023 18:44:47.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djdk.tls.ephemeralDHKeySize=2048
+08-Jun-2023 18:44:47.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.protocol.handler.pkgs=org.apache.catalina.webresources
+08-Jun-2023 18:44:47.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dorg.apache.catalina.security.SecurityListener.UMASK=0027
+08-Jun-2023 18:44:47.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.lang=ALL-UNNAMED
+08-Jun-2023 18:44:47.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.io=ALL-UNNAMED
+08-Jun-2023 18:44:47.673 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util=ALL-UNNAMED
+08-Jun-2023 18:44:47.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.base/java.util.concurrent=ALL-UNNAMED
+08-Jun-2023 18:44:47.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: --add-opens=java.rmi/sun.rmi.transport=ALL-UNNAMED
+08-Jun-2023 18:44:47.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.base=/usr/local/tomcat
+08-Jun-2023 18:44:47.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Dcatalina.home=/usr/local/tomcat
+08-Jun-2023 18:44:47.674 INFO [main] org.apache.catalina.startup.VersionLoggerListener.log Command line argument: -Djava.io.tmpdir=/usr/local/tomcat/temp
+08-Jun-2023 18:44:47.680 INFO [main] org.apache.catalina.core.AprLifecycleListener.lifecycleEvent Loaded Apache Tomcat Native library [2.0.3] using APR version [1.7.0].
+08-Jun-2023 18:44:47.692 INFO [main] org.apache.catalina.core.AprLifecycleListener.initializeSSL OpenSSL successfully initialized [OpenSSL 3.0.2 15 Mar 2022]
+08-Jun-2023 18:44:48.012 INFO [main] org.apache.coyote.AbstractProtocol.init Initializing ProtocolHandler ["http-nio-8080"]
+08-Jun-2023 18:44:48.044 INFO [main] org.apache.catalina.startup.Catalina.load Server initialization in [612] milliseconds
+08-Jun-2023 18:44:48.095 INFO [main] org.apache.catalina.core.StandardService.startInternal Starting service [Catalina]
+08-Jun-2023 18:44:48.096 INFO [main] org.apache.catalina.core.StandardEngine.startInternal Starting Servlet engine: [Apache Tomcat/10.1.9]
+08-Jun-2023 18:44:48.113 INFO [main] org.apache.coyote.AbstractProtocol.start Starting ProtocolHandler ["http-nio-8080"]
+08-Jun-2023 18:44:48.137 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [92] milliseconds
+
+------------------------------------------------------------------------
+W DRUGIM OKNIE TERMINALA
+
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a
+CONTAINER ID   IMAGE           COMMAND             CREATED         STATUS         PORTS                    NAMES
+08ca5a697424   tomcat:latest   "catalina.sh run"   3 minutes ago   Up 3 minutes   0.0.0.0:8888->8080/tcp   tomcat-server
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % 
+
+________________________________________________________________________
+
+PO NACIŚNIĘCIU CTRL + C
+
+08-Jun-2023 18:44:48.137 INFO [main] org.apache.catalina.startup.Catalina.start Server startup in [92] milliseconds
+^C08-Jun-2023 18:48:25.686 INFO [Thread-1] org.apache.coyote.AbstractProtocol.pause Pausing ProtocolHandler ["http-nio-8080"]
+08-Jun-2023 18:48:25.693 INFO [Thread-1] org.apache.catalina.core.StandardService.stopInternal Stopping service [Catalina]
+08-Jun-2023 18:48:25.696 INFO [Thread-1] org.apache.coyote.AbstractProtocol.stop Stopping ProtocolHandler ["http-nio-8080"]
+08-Jun-2023 18:48:25.704 INFO [Thread-1] org.apache.coyote.AbstractProtocol.destroy Destroying ProtocolHandler ["http-nio-8080"]
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a                                                         
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images                                                        
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+tomcat       latest    0fd87ea2d05c   4 days ago   481MB
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % 
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a                                                         
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images                                                        
+REPOSITORY   TAG       IMAGE ID       CREATED      SIZE
+tomcat       latest    0fd87ea2d05c   4 days ago   481MB
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker rmi 0fd87ea2d05c
+Untagged: tomcat:latest
+Untagged: tomcat@sha256:ad1f862cbc5d90a88e8ec8bf56ff3f5ffd33eb79f910e3268f4c9cdad1adb72a
+Deleted: sha256:0fd87ea2d05c83ec3264cd3d4fae94556e25dc5b492de700473b413b3f5c597a
+Deleted: sha256:65e81ba6b3afe2ec9e459841105331e5669811cd1af3ce9b8cff0d003535d331
+Deleted: sha256:dec56d03d420794bcbec38c25a059e01a81c04e151285a4b3b0d56d3483739ae
+Deleted: sha256:d24b09ad9a2c51adda2df8a30c183b5adae8d3001bef1e4b0b4a8d6f5d0fa80f
+Deleted: sha256:f540e86b8c33bf08ab567f78707dbf2b908ffcd873384470a74d60bc4346b7bd
+Deleted: sha256:653444555fade9b3a42a6668d84251058344ed5fa75055670cf20061411241cf
+Deleted: sha256:9fc12f5f43f2364a84965e2cec64f0592d6498c6e5f1f6807396a2a022448c20
+Deleted: sha256:966e94ab6e166fb358a208cfd8169d22dea352501c96700eb7f45092a2962ee6
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a           
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images          
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % 
