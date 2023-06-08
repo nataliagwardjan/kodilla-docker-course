@@ -1,0 +1,61 @@
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker run --name kodilla-flask -p 8080:5000 mps4dev/kodilla-flask:1.0.0
+Unable to find image 'mps4dev/kodilla-flask:1.0.0' locally
+1.0.0: Pulling from mps4dev/kodilla-flask
+48ecbb6b270e: Pull complete 
+692f29ee68fa: Pull complete 
+6439819450d1: Pull complete 
+3c7be240f7bf: Pull complete 
+ca4b349df8ed: Pull complete 
+d2bcc202864f: Pull complete 
+1f5aca06ea8a: Pull complete 
+3e9ab7d01023: Pull complete 
+Digest: sha256:e79c9dd70dcf42de3495e7547414dd4accacf550cdb01292c0bbb08fbf591240
+Status: Downloaded newer image for mps4dev/kodilla-flask:1.0.0
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.17.0.2:5000
+Press CTRL+C to quit
+172.17.0.1 - - [08/Jun/2023 18:27:28] "GET /hello HTTP/1.1" 200 -
+^C
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a
+CONTAINER ID   IMAGE                         COMMAND                  CREATED          STATUS          PORTS                    NAMES
+c8bfb0de3631   mps4dev/kodilla-flask:1.0.0   "/bin/sh -c 'python …"   33 seconds ago   Up 32 seconds   0.0.0.0:8080->5000/tcp   kodilla-flask
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker kill c8bfb0de3631
+c8bfb0de3631
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a            
+CONTAINER ID   IMAGE                         COMMAND                  CREATED          STATUS                       PORTS     NAMES
+c8bfb0de3631   mps4dev/kodilla-flask:1.0.0   "/bin/sh -c 'python …"   57 seconds ago   Exited (137) 4 seconds ago             kodilla-flask
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images           
+REPOSITORY              TAG       IMAGE ID       CREATED        SIZE
+mps4dev/kodilla-flask   1.0.0     c84edaea3501   4 months ago   106MB
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker rm c8bfb0de3631
+c8bfb0de3631
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a          
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images         
+REPOSITORY              TAG       IMAGE ID       CREATED        SIZE
+mps4dev/kodilla-flask   1.0.0     c84edaea3501   4 months ago   106MB
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker rmi c84edaea3501
+Untagged: mps4dev/kodilla-flask:1.0.0
+Untagged: mps4dev/kodilla-flask@sha256:e79c9dd70dcf42de3495e7547414dd4accacf550cdb01292c0bbb08fbf591240
+Deleted: sha256:c84edaea35017ef244dd5f85d7b1b56c3082c2b8b5af22443ecc15e1a6332b72
+Deleted: sha256:906dc0457403be99099a408e46b8b945e5cf18061a36c7a34d7bf59932181b56
+Deleted: sha256:e15656b62f3f44b2142b1100066939e027c0551b5b7145f9c3912f8dbf091d67
+Deleted: sha256:47481c8e38d3ec317581d044e77eb9ddf4dc9d7bcf8b818f2b92db10565c01c7
+Deleted: sha256:daaf059638b72f9ba9d69befe09427a99d62e4f52c7acc251950daf62523f0af
+Deleted: sha256:d7fc20f029904186c96c9ae54f7a51424b78006c5a7bf86a73628a34f23c53f3
+Deleted: sha256:14460484e755ce409c08efc55be5f7697e9af9937bc79acb17dfe07d8e56e5bf
+Deleted: sha256:f5547119061c18edca996cbdc3507cac5513a585def736cd0f32f0ff1024e478
+Deleted: sha256:629164d914fc35be714ea121054f0a512ace424b675daa808ae037d6706c343f
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker ps -a
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % docker images
+REPOSITORY   TAG       IMAGE ID   CREATED   SIZE
+(base) nataliagwardjan@MacBook-Air-Natalia kodilla-docker-course % 
