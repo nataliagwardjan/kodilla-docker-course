@@ -1,0 +1,39 @@
+# BUILD IMAGE
+nataliagwardjan@MacBook-Air-Natalia go-hello-world % docker build -t natgwa/go-hello-world:1.0.1 .
+[+] Building 2.2s (10/10) FINISHED                                                                                                                                     
+ => [internal] load build definition from Dockerfile                                                                                                              0.0s
+ => => transferring dockerfile: 240B                                                                                                                              0.0s
+ => [internal] load .dockerignore                                                                                                                                 0.0s
+ => => transferring context: 103B                                                                                                                                 0.0s
+ => [internal] load metadata for docker.io/library/golang:1.19                                                                                                    0.9s
+ => [1/5] FROM docker.io/library/golang:1.19@sha256:6fb612aac0ae076bd4f6a76e48c4c8e59a4bae89dc5201252ec2b4eb8a2ae2a0                                              0.0s
+ => [internal] load build context                                                                                                                                 0.0s
+ => => transferring context: 98B                                                                                                                                  0.0s
+ => CACHED [2/5] WORKDIR /src/app                                                                                                                                 0.0s
+ => CACHED [3/5] RUN go mod init gohelloworld                                                                                                                     0.0s
+ => CACHED [4/5] COPY . .                                                                                                                                         0.0s
+ => [5/5] RUN go build -v -o /usr/local/bin/app ./...                                                                                                             1.0s
+ => exporting to image                                                                                                                                            0.1s
+ => => exporting layers                                                                                                                                           0.1s
+ => => writing image sha256:17cfba0c4a0bca2d5f232a9f49de8b3484e71e6aac9eff4b66f6f07867d8bb4b                                                                      0.0s
+ => => naming to docker.io/natgwa/go-hello-world:1.0.1                                                                                                            0.0s
+
+______________________________________________________________________________
+# RUN CONTAINER
+docker run --name go-hello-world -p 8080:8080 natgwa/go-hello-world:1.0.1
+Server running (port=8080), route: http://localhost:8080/helloworld
+
+
+______________________________________________________________________________
+# CHECK FILES
+(base) nataliagwardjan@MacBook-Air-Natalia ~ % docker exec -it go-hello-world /bin/sh
+# ls -l -a
+total 24
+drwxr-xr-x 1 root root 4096 Jun 19 19:16 .
+drwxr-xr-x 1 root root 4096 Jun 19 19:09 ..
+-rw-r--r-- 1 root root   26 Jun 19 18:56 .dockerignore
+-rw-r--r-- 1 root root   29 Jun 19 19:09 go.mod
+-rw-r--r-- 1 root root  394 Jun  8 19:54 main.go
+# 
+
+
