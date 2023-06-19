@@ -75,5 +75,66 @@ nginx                       latest    f9c14fe76d50   3 weeks ago     143MB
 172.17.0.1 - - [19/Jun/2023:18:34:52 +0000] "GET / HTTP/1.1" 304 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" "-"
 172.17.0.1 - - [19/Jun/2023:18:35:04 +0000] "GET / HTTP/1.1" 200 156 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" "-"
 172.17.0.1 - - [19/Jun/2023:18:35:20 +0000] "GET / HTTP/1.1" 200 155 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" "-"
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:28 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:29 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:31 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+2023/06/19 18:41:32 [notice] 1#1: signal 28 (SIGWINCH) received
+172.17.0.1 - - [19/Jun/2023:18:42:02 +0000] "GET / HTTP/1.1" 200 161 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" "-"
+172.17.0.1 - - [19/Jun/2023:18:42:34 +0000] "GET / HTTP/1.1" 200 169 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" "-"
+
 
 
