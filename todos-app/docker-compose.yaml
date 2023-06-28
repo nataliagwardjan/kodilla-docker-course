@@ -12,6 +12,7 @@ services:
     build:
       context: ./backend
       #dockerfile: Dockerfile.dev
+    image: natgwa/todo-backend:1.0.0
     volumes:
       - ./backend/src:/app/src
     ports:
@@ -24,6 +25,7 @@ services:
     container_name: todo-frontend-app
     build:
       context: ./frontend
+    image: natgwa/todo-frontend:1.0.0
     volumes:
       - ./frontend/src:/app/src
     ports:

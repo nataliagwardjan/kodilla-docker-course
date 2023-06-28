@@ -4,6 +4,7 @@ services:
     container_name: quotes-database
     build:
       context: ./database
+    image: natgwa/quotes-database
     volumes:
       - postgresdata:/data/db
     env_file:
@@ -13,6 +14,7 @@ services:
     build:
       context: ./backend
       #dockerfile: Dockerfile.dev
+    image: natgwa/quotes-backend
     volumes:
       - ./backend:/app
     ports:
@@ -25,6 +27,7 @@ services:
     container_name: quotes-frontend
     build:
       context: ./frontend
+    image: natgwa/quotes-frontend
     volumes:
       - ./frontend/src:/app/src
     ports:
