@@ -1,0 +1,160 @@
+# STWORZENIE WŁASNEJ PRZESTRZENI NAZW
+ % kubectl create namespace nginx-ns     
+namespace/nginx-ns created
+% kubectl get ns
+NAME              STATUS   AGE
+default           Active   8d
+kube-node-lease   Active   8d
+kube-public       Active   8d
+kube-system       Active   8d
+nginx-ns          Active   12m
+
+___________________________________________________
+# WYTROZENIE ZASOBU DEPLOYMENT
+ % kubectl -n nginx-ns create deployment --image=nginx nginx-app
+deployment.apps/nginx-app created
+ % kubectl -n nginx-ns get all
+NAME                             READY   STATUS    RESTARTS   AGE
+pod/nginx-app-6f4c6d74d9-ll4fm   1/1     Running   0          4m49s
+
+NAME                        READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/nginx-app   1/1     1            1           4m49s
+
+NAME                                   DESIRED   CURRENT   READY   AGE
+replicaset.apps/nginx-app-6f4c6d74d9   1         1         1       4m49s
+
+___________________________________________________
+# WYŚWIETLENIE WSZSYTKICH ZASOBÓW TYPU DEPLOYMENT
+ % kubectl -n nginx-ns get deployment
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-app   1/1     1            1           6m29s
+
+___________________________________________________
+# WYŚWIETLENIE INFORMACJI O TYM KONKRETNYM ZASOBIE
+ % kubectl -n nginx-ns describe deployment nginx-app
+Name:                   nginx-app
+Namespace:              nginx-ns
+CreationTimestamp:      Mon, 03 Jul 2023 11:25:38 +0200
+Labels:                 app=nginx-app
+Annotations:            deployment.kubernetes.io/revision: 1
+Selector:               app=nginx-app
+Replicas:               1 desired | 1 updated | 1 total | 1 available | 0 unavailable
+StrategyType:           RollingUpdate
+MinReadySeconds:        0
+RollingUpdateStrategy:  25% max unavailable, 25% max surge
+Pod Template:
+  Labels:  app=nginx-app
+  Containers:
+   nginx:
+    Image:        nginx
+    Port:         <none>
+    Host Port:    <none>
+    Environment:  <none>
+    Mounts:       <none>
+  Volumes:        <none>
+Conditions:
+  Type           Status  Reason
+  ----           ------  ------
+  Available      True    MinimumReplicasAvailable
+  Progressing    True    NewReplicaSetAvailable
+OldReplicaSets:  <none>
+NewReplicaSet:   nginx-app-6f4c6d74d9 (1/1 replicas created)
+Events:
+  Type    Reason             Age   From                   Message
+  ----    ------             ----  ----                   -------
+  Normal  ScalingReplicaSet  11m   deployment-controller  Scaled up replica set nginx-app-6f4c6d74d9 to 1
+___________________________________________________
+# WYŚWIETLNIENIE NAZW SZYSTKICH PODOÓW W UTWORZONEJ PRZESTRZENI NAZW
+ % kubectl -n nginx-ns get pods         
+NAME                         READY   STATUS    RESTARTS   AGE
+nginx-app-6f4c6d74d9-ll4fm   1/1     Running   0          20m
+ % kubectl -n nginx-ns get pods -o name
+pod/nginx-app-6f4c6d74d9-ll4fm
+
+___________________________________________________
+# WYŚWIETL PLIK MANIFESTU W FORMACIE YAML DLA UTWORZONEGO ZASOBU TYPU DEPLOYMENT
+% cat manifest-nginx-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-ns
+  labels:
+    app: nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: nginx-app
+  template:
+    metadata:
+      labels:
+        app: nginx-app
+    spec:
+      containers:
+         - image: nginx
+
+___________________________________________________
+# WYPISZ ZAWARTOŚĆ PLIKU /ECT/HOSTS Z ISTNIEJĄCEGO W PRZESTRZENI NAZW nginx-ns PODA
+kubectl -n nginx-ns exec --stdin --tty pod/nginx-app-6f4c6d74d9-ll4fm -- /bin/bash
+root@nginx-app-6f4c6d74d9-ll4fm:/# ls 
+bin   docker-entrypoint.d   home   lib64   mnt	 root  srv  usr
+boot  docker-entrypoint.sh  lib    libx32  opt	 run   sys  var
+dev   etc		    lib32  media   proc  sbin  tmp
+root@nginx-app-6f4c6d74d9-ll4fm:/# cat etc/hosts 
+# Kubernetes-managed hosts file.
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+fe00::0	ip6-mcastprefix
+fe00::1	ip6-allnodes
+fe00::2	ip6-allrouters
+10.1.0.12	nginx-app-6f4c6d74d9-ll4fm
+root@nginx-app-6f4c6d74d9-ll4fm:/# 
+
+# chyba, że chodziło o to:
+ % kubectl -n nginx-ns exec pod/nginx-app-6f4c6d74d9-ll4fm -- cat /etc/hosts 
+# Kubernetes-managed hosts file.
+127.0.0.1	localhost
+::1	localhost ip6-localhost ip6-loopback
+fe00::0	ip6-localnet
+fe00::0	ip6-mcastprefix
+fe00::1	ip6-allnodes
+fe00::2	ip6-allrouters
+10.1.0.12	nginx-app-6f4c6d74d9-ll4fm
+
+___________________________________________________
+# USUŃ POD ISTNIEJĄCY W PRZESTRZENI NAZW
+ % kubectl -n nginx-ns delete pod/nginx-app-6f4c6d74d9-ll4fm 
+pod "nginx-app-6f4c6d74d9-ll4fm" deleted
+ % kubectl -n nginx-ns get pods
+NAME                         READY   STATUS    RESTARTS   AGE
+nginx-app-6f4c6d74d9-jnr44   1/1     Running   0          19s
+
+
+___________________________________________________
+# USUŃ ZASÓB DEPLOYMENT
+NAME        READY   UP-TO-DATE   AVAILABLE   AGE
+nginx-app   1/1     1            1           142m
+ % kubectl -n nginx-ns delete deployment.apps/nginx-app
+deployment.apps "nginx-app" deleted
+% kubectl -n nginx-ns get deployments -o name 
+(base) nataliagwardjan@MacBook-Air-Natalia ~ % 
+
+___________________________________________________
+# USUŃ UTWORZONĄ PRZESTRZEŃ NAZW
+ % kubectl get namespace               
+NAME              STATUS   AGE
+default           Active   9d
+kube-node-lease   Active   9d
+kube-public       Active   9d
+kube-system       Active   9d
+nginx-ns          Active   146m
+(base) nataliagwardjan@MacBook-Air-Natalia ~ % kubectl delete ns nginx-ns
+namespace "nginx-ns" deleted
+(base) nataliagwardjan@MacBook-Air-Natalia ~ % kubectl get namespace     
+NAME              STATUS   AGE
+default           Active   9d
+kube-node-lease   Active   9d
+kube-public       Active   9d
+kube-system       Active   9d
+
